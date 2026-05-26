@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemas en la Adolescencia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f7fb;
+            color: #2d3436;
+            line-height: 1.9;
+        }
+
+        /* NAV */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.90);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 18px;
+            z-index: 1000;
+            flex-wrap: wrap;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background: #74b9ff;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* HEADER */
+
+        header {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(20, 20, 40, 0.75),
+                    rgba(20, 20, 40, 0.75)),
+                url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1600&auto=format&fit=crop');
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero {
+            max-width: 950px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 75px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 22px;
+        }
+
+        /* CONTENIDO */
+
+        .container {
+            width: 90%;
+            max-width: 1250px;
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 40px;
+            margin-bottom: 25px;
+            color: #1e293b;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background: #0984e3;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            border-radius: 10px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 20px;
+            color: #0984e3;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #444;
+        }
+
+        ul,
+        ol {
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        strong {
+            color: #0984e3;
+        }
+
+        /* IMAGENES */
+
+        img {
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .image-grid img {
+            width: 320px;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        /* TARJETAS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .mini-card {
+            background: #f8fbff;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* TABLA */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        th {
+            background: #0984e3;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            background: #f8fbff;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #dbeafe;
+        }
+
+        /* FRASE */
+
+        .quote {
+            background: linear-gradient(135deg, #0984e3, #6c5ce7);
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .quote p {
+            color: white;
+            font-size: 24px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: white;
+            text-align: center;
+        }
+
+        @media(max-width:900px) {
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .card {
+                padding: 30px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .image-grid img {
+                width: 100%;
+                height: auto;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <nav>
+        <a href="#objetivo">Objetivo</a>
+        <a href="#ansiedad">Ansiedad por el Futuro</a>
+        <a href="#adiccionCelular">Adicción al Celular</a>
+        <a href="#salud">Salud Mental</a>
+        <a href="#identidad">Falta de Identidad</a>
+        <a href="#laboral">Desarrollo Laboral</a>
+    </nav>
+
+    <!-- HEADER PRINCIPAL -->
+
+    <header>
+
+        <div class="hero">
+
+            <h1>PROBLEMAS EN LA ADOLESCENCIA</h1>
+
+        </div>
+
+    </header>
+
+    <main class="container">
+
+        <!-- OBJETIVO -->
+
+        <section class="card" id="objetivo">
+
+            <h2>Objetivo Principal</h2>
+            <p>
+                La adolescencia es una etapa llena de cambios, emociones y desafíos.
+                Comprender las problemáticas que enfrentan los jóvenes es fundamental
+                para construir una sociedad más consciente, empática y saludable.
+            </p>
+
+
+            <p>
+                El objetivo de esta página web es visibilizar y abordar diversas problemáticas que afectan a los jóvenes
+                en la actualidad, tales como la salud mental, la ansiedad ante el futuro, la presión social y la
+                disminución del pensamiento crítico derivada del uso excesivo de las redes sociales.
+            </p>
+
+            <p>
+                Mediante contenido informativo, recursos de apoyo y espacios de reflexión, se busca orientar y brindar
+                herramientas que contribuyan al bienestar emocional y personal de los jóvenes.
+            </p>
+
+            <p>
+                Asimismo, la página tiene como propósito concientizar a la audiencia adulta sobre la relevancia e
+                impacto de estas problemáticas, promoviendo una mayor comprensión, empatía y participación en la
+                construcción de un entorno más saludable y consciente para las nuevas generaciones.
+            </p>
+
+
+        </section>
+
+        <!-- ANSIEDAD -->
+
+        <section class="card" id="ansiedad">
+
+            <h2>Ansiedad por el Futuro</h2>
+
+            <p>
+                La ansiedad por el futuro se ha convertido en uno de los principales problemas emocionales que afectan a
+                los jóvenes en la actualidad.
+            </p>
+
+            <p>
+                La presión académica, la incertidumbre laboral, las expectativas sociales y la constante comparación en
+                redes sociales han provocado que muchos adolescentes y universitarios vivan con estrés permanente y
+                miedo a no cumplir con lo que la sociedad espera de ellos.
+            </p>
+
+            <h2>Estudios Científicos</h2>
+
+            <p>
+                De acuerdo con el estudio científico “Self-efficacy and stress as predictors of anxiety in Peruvian and
+                Mexican university students”, realizado en 2025 por investigadores de Perú y México, los estudiantes
+                mexicanos presentaron niveles más altos de estrés y ansiedad en comparación con los estudiantes
+                peruanos.
+            </p>
+
+            <p>
+                La investigación analizó a más de 2,100 universitarios y concluyó que el estrés constante y la baja
+                confianza en las propias capacidades son factores fundamentales que aumentan la ansiedad juvenil.
+            </p>
+
+            <p>
+                Además, el estudio señala que la incertidumbre sobre el futuro profesional, económico y social influye
+                directamente en el bienestar emocional de los jóvenes.
+            </p>
+
+            <div class="image-grid">
+
+
+                <img src="https://images-provider.frontiersin.org/api/ipx/w=1200&amp;f=png/https://www.frontiersin.org/files/Articles/809230/fpsyg-13-809230-HTML/image_m/fpsyg-13-809230-t001.jpg"
+                    jsaction="" class="sFlh5c FyHeAf iPVvYb"
+                    style="max-width: 1040px; height: 115px; margin: 12px 0px; width: 357px;"
+                    alt="Frontiers | Psychological Distress, Anxiety, and Academic Self-Efficacy as  Predictors of Study Satisfaction Among Peruvian University Students During  the COVID-19 Pandemic"
+                    jsname="kn3ccd">
+
+
+            </div>
+            <br>
+
+            <p>El estudio también destaca que muchos jóvenes sienten miedo al fracaso debido a la presión de tener
+                éxito
+                rápidamente. Las redes sociales han intensificado este problema, ya que constantemente muestran estilos
+                de
+                vida idealizados, logros académicos, cuerpos “perfectos” y metas difíciles de alcanzar.
+                Esto provoca comparaciones poco realistas que afectan la autoestima y generan pensamientos negativos
+                sobre
+                el futuro.</p>
+
+            <h2>Opiniones de Filósofos</h2>
+
+            <p>
+                A lo largo de la historia, diversos filósofos también reflexionaron sobre el miedo al futuro y la
+                ansiedad
+                humana. El filósofo romano Séneca escribió:
+            </p>
+
+
+
+            <div class="quote">
+
+
+
+                <p>
+                    “Sufrimos más en la imaginación que en la realidad”
+                </p>
+            </div>
+            <br>
+            <p>
+                Esta frase refleja cómo muchas veces el miedo al futuro nace de pensamientos anticipados y no de
+                situaciones reales.
+            </p>
+
+            <p>
+                Por otro lado, Jean-Paul Sartre mencionaba que “el hombre está condenado a ser libre”, haciendo
+                referencia
+                a la presión que sienten las personas al tomar decisiones importantes sobre su vida y su futuro.
+            </p>
+
+            <p>
+                Asimismo, Albert Camus defendía la importancia de encontrar sentido incluso en momentos de incertidumbre
+                y
+                crisis emocional.
+            </p>
+
+            <div class="image-grid">
+
+                <img
+                    src="https://content-historia.nationalgeographic.com.es/medio/2026/04/14/busto-de-seneca_f37a169f_2228463435(1)_260414173635_1280x1715.webp">
+
+                <img src="https://www.buscabiografias.com/img/people/Jean-Paul_Sartre.jpg">
+
+            </div>
+
+            <h2>Consecuencias</h2>
+
+            <ul>
+                <li>Rendimiento escolar bajo.</li>
+                <li>Relaciones personales inestables.</li>
+                <li>La salud física decadente.</li>
+            </ul>
+
+            <div class="image-grid">
+
+                <img
+                    src="https://www.ipler.edu.co/wp-content/uploads/2022/08/que-hacer-ante-el-bajo-rendimiento-ayuda.png">
+
+                <img
+                    src="https://www.fundacioncadah.org/j289eghfd7511986_uploads/TDAH%20CONFLICTOS%20FAMILIARES%20ADOLESCENTES.jpg">
+
+                <img src="https://centromedicorespirar.com/wp-content/uploads/2024/02/adolescente2.jpg">
+
+            </div>
+
+            <br>
+
+            <h2>¿Necesitas ayuda? Aquí te la brindamos</h2>
+
+            <p>
+                En México existen instituciones que brindan apoyo emocional y psicológico gratuito para jóvenes que
+                atraviesan situaciones de ansiedad, estrés o crisis emocional.
+            </p>
+
+            <p>
+                Entre ellas se encuentran SAPTEL, una línea de apoyo psicológico disponible las 24 horas; Línea de la
+                Vida,
+                especializada en orientación emocional y prevención de crisis; y Centros de Integración Juvenil,
+                institución enfocada en salud mental y bienestar juvenil.
+            </p>
+
+            <h3>Números de apoyo en México:</h3>
+
+            <ul>
+                <li>SAPTEL: 800 472 7835</li>
+                <li>Línea de la Vida: 800 911 2000</li>
+                <li>LOCATEL: 55 5658 1111</li>
+                <li>Emergencias: 911</li>
+            </ul>
+
+        </section>
+
+        <section class="card" id="adiccionCelular">
+            <!-- ENCABEZADO -->
+
+
+            <!-- IMAGEN -->
+
+            <section>
+
+                <h2>Uso excesivo del celular</h2>
+                <p>
+                    Un problema moderno que afecta la salud mental, el rendimiento escolar,
+                    las relaciones sociales y la calidad de vida de miles de adolescentes.
+                </p>
+                <img src="https://media.ambito.com/p/deae6bebe13347c4392193f8cd2c3fe6/adjuntos/239/imagenes/039/903/0039903061/celular-1jpg.jpg"
+                    jsaction="" class="sFlh5c FyHeAf iPVvYb"
+                    style="max-width: 1200px; height: 201px; margin: 0px; width: 357px;"
+                    alt="Cerebro: expertos advierten sobre el uso excesivo del celular" jsname="kn3ccd">
+                <img src="https://thumbs.dreamstime.com/z/caricatura-smartphone-c%C3%B3mic-tel%C3%A9fono-con-sobre-dise%C3%B1o-de-arte-pop-historietas-vectoriales-retro-comics-385284075.jpg"
+                    jsaction="" class="sFlh5c FyHeAf iPVvYb"
+                    style="max-width: 1200px; height: 201px; margin: 0px; width: 357px;"
+                    alt="Cómics De Smartphone Ilustraciones Stock, Vectores, Y Clipart – (1,314  Ilustraciones Stock)"
+                    jsname="kn3ccd">
+                <img src="https://thumbs.dreamstime.com/b/cartoon-smartphone-comic-book-telephone-sun-retro-vector-comics-pop-art-design-448537181.jpg"
+                    jsaction="" class="sFlh5c FyHeAf iPVvYb"
+                    style="max-width: 800px; height: 188px; margin: 0px; width: 356px;"
+                    alt="Cómic De Smartphone Ilustraciones Stock, Vectores, Y Clipart – (7,923  Ilustraciones Stock)"
+                    jsname="kn3ccd">
+
+            </section>
+
+            <!-- INFORMACIÓN -->
+
+            <section>
+
+                <h2>¿Qué es la adicción al celular?</h2>
+
+                <p>
+                    La adicción al celular ocurre cuando una persona siente la necesidad
+                    constante de revisar su teléfono móvil, incluso cuando no es necesario.
+                </p>
+
+                <p>
+                    Muchos jóvenes pasan gran parte del día utilizando redes sociales,
+                    videojuegos, aplicaciones de mensajería o viendo videos.
+                </p>
+
+                <p>
+                    Esto puede generar dependencia emocional, ansiedad, estrés y problemas
+                    en la vida académica y familiar.
+                </p>
+
+                <div class="card">
+
+                    <h3>Dato importante</h3>
+
+                    <p>
+                        Estudios indican que algunos adolescentes revisan su celular
+                        más de 100 veces al día.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- CONSECUENCIAS -->
+
+            <section>
+
+                <h2>Consecuencias principales</h2>
+
+                <ul>
+                    <li>Problemas de sueño</li>
+                    <li>Bajo rendimiento escolar</li>
+                    <li>Ansiedad y depresión</li>
+                    <li>Pérdida de atención</li>
+                    <li>Aislamiento social</li>
+                    <li>Menor actividad física</li>
+                    <li>Dependencia emocional</li>
+                    <li>Problemas familiares</li>
+                </ul>
+
+            </section>
+
+            <!-- TABLA -->
+
+            <section>
+
+                <h2>Horas promedio de uso diario</h2>
+
+                <table>
+
+                    <tr>
+                        <th>Edad</th>
+                        <th>Horas promedio</th>
+                        <th>Riesgo</th>
+                    </tr>
+
+                    <tr>
+                        <td>10 - 12 años</td>
+                        <td>4 horas</td>
+                        <td>Moderado</td>
+                    </tr>
+
+                    <tr>
+                        <td>13 - 15 años</td>
+                        <td>6 horas</td>
+                        <td>Alto</td>
+                    </tr>
+
+                    <tr>
+                        <td>16 - 18 años</td>
+                        <td>8 horas</td>
+                        <td>Muy alto</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+            <!-- INSTITUCIONES -->
+
+            <section>
+
+                <h2>Instituciones que ayudan en Chilpancingo</h2>
+
+                <ul>
+                    <li>DIF Guerrero</li>
+                    <li>SIPINNA Guerrero</li>
+                    <li>Centros de Integración Juvenil (CIJ)</li>
+                    <li>Secretaría de Salud Guerrero</li>
+                    <li>UNICEF México</li>
+                </ul>
+
+                <p>
+                    Estas instituciones ofrecen apoyo psicológico, orientación familiar
+                    y programas de prevención para niños y adolescentes.
+                </p>
+
+            </section>
+
+            <!-- NOTICIAS -->
+
+            <section>
+
+                <h2>Noticias relacionadas</h2>
+
+                <div class="noticia">
+
+                    <h3>Aumento de ansiedad en adolescentes</h3>
+
+                    <p>
+                        Expertos han advertido que el uso excesivo del celular
+                        incrementa problemas de ansiedad y estrés en jóvenes.
+                    </p>
+
+                </div>
+
+                <div class="noticia">
+
+                    <h3>Escuelas promueven límites digitales</h3>
+
+                    <p>
+                        Algunas escuelas mexicanas han comenzado campañas para reducir
+                        el tiempo frente a pantallas y fomentar la convivencia.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- ARTÍCULOS -->
+
+            <section>
+
+                <h2>Artículos científicos</h2>
+
+                <p>
+                    Diversos estudios científicos relacionan el uso excesivo
+                    del celular con alteraciones del sueño y problemas emocionales.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Revista de Psicología:
+                        “Impacto del smartphone en adolescentes”.
+                    </li>
+
+                    <li>
+                        Organización Mundial de la Salud:
+                        recomendaciones sobre tiempo frente a pantallas.
+                    </li>
+
+                    <li>
+                        Estudios universitarios muestran que el abuso de redes sociales
+                        afecta la concentración y memoria.
+                    </li>
+
+                </ul>
+
+            </section>
+
+            <!-- CASO -->
+
+            <section>
+
+                <h2>Ejemplo de caso</h2>
+
+                <p>
+                    Un estudiante de secundaria comenzó a utilizar su celular
+                    más de 9 horas al día en redes sociales y videojuegos.
+                </p>
+
+                <p>
+                    Con el tiempo, disminuyó su rendimiento escolar, dejó de convivir
+                    con sus amigos y desarrolló problemas de sueño.
+                </p>
+
+                <p>
+                    Después de recibir apoyo psicológico y establecer límites digitales,
+                    logró mejorar sus hábitos y recuperar su rendimiento académico.
+                </p>
+
+            </section>
+
+            <!-- SOLUCIONES -->
+
+            <section>
+
+                <h2>¿Cómo prevenir la adicción?</h2>
+
+                <ul>
+                    <li>Establecer horarios de uso</li>
+                    <li>Evitar el celular antes de dormir</li>
+                    <li>Practicar deportes</li>
+                    <li>Pasar tiempo en familia</li>
+                    <li>Realizar actividades sin pantallas</li>
+                    <li>Controlar el tiempo en redes sociales</li>
+                </ul>
+
+            </section>
+
+            <!-- ENLACES -->
+
+            <section>
+
+                <h2>Enlaces de ayuda</h2>
+
+                <ul>
+
+                    <li>
+                        <a href="https://www.gob.mx/sipinna" target="_blank">
+                            SIPINNA México
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.cij.gob.mx/" target="_blank">
+                            Centros de Integración Juvenil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.unicef.org/mexico/" target="_blank">
+                            UNICEF México
+                        </a>
+                    </li>
+
+                </ul>
+
+            </section>
+
+            <!-- CONCLUSIÓN -->
+
+            <section>
+
+                <h2>Conclusión</h2>
+
+                <p>
+                    El celular es una herramienta útil cuando se utiliza de forma responsable.
+                    Sin embargo, el uso excesivo puede convertirse en una adicción peligrosa.
+                </p>
+
+                <p>
+                    Es importante crear hábitos saludables y fomentar actividades
+                    que ayuden a mejorar la convivencia y la salud mental.
+                </p>
+
+            </section>
+        </section>
+
+
+
+        <!-- SALUD MENTAL -->
+
+        <section class="card" id="salud">
+
+            <h1>La Salud Mental en los Jóvenes del Siglo XXI</h1>
+
+            <p>Los jóvenes de hoy se enfrentan a un entorno radicalmente distinto al de generaciones anteriores. La
+                hiperconectividad y el uso constante de la tecnología y las redes sociales han transformado la forma en
+                que se
+                relacionan, creando dinámicas de comparación constante, dependencia de la aprobación digital y una
+                exposición
+                continua al ciberacoso, lo que eleva los niveles de ansiedad y depresión.</p>
+
+            <p>A esto se suma la brecha con los patrones familiares retrógrados. Muchos hogares aún manejan dinámicas
+                antiguas
+                donde la salud mental es un tabú, se minimizan las emociones de los jóvenes con frases como "son
+                exageraciones"
+                o se les exige cumplir con expectativas rígidas que ya no encajan en el mundo actual. Esta falta de
+                validación y
+                apoyo en casa genera un aislamiento emocional complejo para las nuevas generaciones.</p>
+
+            <h2>Principales Factores que Impactan el Bienestar</h2>
+            <p>Además del entorno digital y familiar, existen otros elementos críticos en el día a día de los
+                adolescentes y
+                jóvenes que influyen directamente en su estabilidad emocional:</p>
+            <ul>
+                <li><strong>Presión académica excesiva:</strong> La carga escolar y la competitividad por el futuro
+                    universitario o laboral generan altos índices de estrés cronificado.</li>
+                <li><strong>Falta de descanso y trastornos del sueño:</strong> El uso de pantallas hasta altas horas de
+                    la noche
+                    altera los ciclos circadianos, afectando el estado de ánimo y la concentración.</li>
+                <li><strong>Incertidumbre social y económica:</strong> La percepción de un futuro inestable o las crisis
+                    globales aumentan la sensación de desesperanza.</li>
+            </ul>
+
+            <h2>Señales de Alerta a Tener en Cuenta</h2>
+            <p>Identificar a tiempo los cambios de comportamiento puede marcar la diferencia. Algunas de las
+                manifestaciones más
+                comunes incluyen:</p>
+            <ul>
+                <li><strong>Aislamiento prolongado:</strong> Evitar el contacto con amigos, familiares o actividades que
+                    antes
+                    se disfrutaban.</li>
+                <li><strong>Cambios drásticos en el humor:</strong> Irritabilidad constante, episodios de llanto sin
+                    motivo
+                    aparente o apatía generalizada.</li>
+                <li><strong>Alteraciones físicas visibles:</strong> Cambios marcados en los hábitos alimenticios (comer
+                    de más o
+                    perder el apetito) y fatiga constante.</li>
+            </ul>
+
+            <h2>Hacia una Solución: Espacios de Apoyo</h2>
+            <p>Romper el silencio es el primer paso. El cuidado de la salud mental requiere la creación de redes de
+                apoyo
+                seguras, el acceso a atención psicológica profesional sin estigmas y la educación emocional desde las
+                escuelas
+                para aprender a gestionar la frustración y validar las emociones propias y ajenas.</p>
+            <img src="https://elvalle.com.mx/wp-content/uploads/2024/09/Salud.jpg" jsaction=""
+                class="sFlh5c FyHeAf iPVvYb" style="max-width: 2083px; height: 187px; margin: 0px; width: 357px;"
+                alt="Salud emite recomendaciones para el cuidado físico y mental de los  estudiantes - El Valle"
+                jsname="kn3ccd">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXMp2wXhwI1stdG62xoOechm4AT9RSertokQ&amp;s"
+                class="sFlh5c FyHeAf" alt="La salud mental de los jóvenes, tras la pandemia - Periferias - alandar"
+                jsname="JuXqh" style="max-width: 740px; width: 283px; height: 283px; margin: 0px;"
+                data-ilt="1779725149823">
+            <img src="https://espm.mx/wp-content/uploads/2021/03/salud-mental.jpg" jsaction=""
+                class="sFlh5c FyHeAf iPVvYb" style="max-width: 1024px; width: 356px; height: 293px; margin: 0px;"
+                alt="La importancia de la salud pública para el cuidado de la salud mental – ESPM" jsname="kn3ccd">
+            </div>
+
+        </section>
+
+        <!-- IDENTIDAD -->
+
+        <section class="card" id="identidad">
+
+            <h2>La Falta de Identidad en Adolescentes</h2>
+
+            <p>
+                La adolescencia es una etapa llena de cambios físicos, emocionales y sociales.
+            </p>
+
+            <p>
+                Durante este periodo muchos jóvenes buscan descubrir quiénes son realmente y cuál es su lugar dentro
+                de
+                la sociedad.
+                La falta de identidad puede provocar inseguridad, miedo al rechazo y dependencia de la opinion de
+                otras personas. Por eso es importante brindar apoyo, informacion y orientacion.
+                LA FALTA DE IDENTIDAD
+                La falta de identidad ocurre cuando una persona tiene dificultades para conocerse a si mismo, expresar
+                sus emociones
+                reconocer sus valores o tomar decisiones propias.
+                Esto puede hacer que los adolescentes se sientan confundidos, inseguros o influenciados facilmente por
+                otras personas
+                y redes sociales.
+
+            </p>
+
+            <h3>Causas principales</h3>
+
+            <ul>
+                <li>Presión social.</li>
+                <li>Uso excesivo de redes sociales.</li>
+                <li>Problemas familiares.</li>
+                <li>Falta de comunicación.</li>
+                <li>Baja autoestima.</li>
+                <li>miedo a ser rechazado</li>
+                <li>necesidad de aceptacion</li>
+            </ul>
+
+            <h3>Consecuencias</h3>
+
+            <ul>
+                <li>Inseguridad.</li>
+                <li>Ansiedad.</li>
+                <li>Estrés emocional.</li>
+                <li>Baja autoestima.</li>
+                <li>dificultad para tomar decisiones</li>
+                <li>dependencia emocional</li>
+                <li>problemas para relacionarse</li>
+
+
+
+            </ul>
+            <p>
+                Cuando los adolescentes no se sienten seguros de sí mismos,
+                pueden dejarse influenciar fácilmente por otras personas.
+            </p>
+            <h2>¿Cómo fortalecer la identidad?</h2>
+
+            <ol>
+                <li>Reconocer las cualidades personales.</li>
+                <li>Hablar sobre las emociones.</li>
+                <li>Evitar compararse con otros.</li>
+                <li>Practicar actividades saludables.</li>
+                <li>Establecer metas personales.</li>
+                <li>Convivir con personas positivas.</li>
+                <li>Buscar ayuda profesional si es necesario.</li>
+            </ol>
+
+            <p>
+                Aprender a conocerse y aceptarse ayuda a fortalecer la
+                seguridad y confianza personal.
+            </p>
+            <h2>Centros de apoyo</h2>
+
+            <p>
+                Existen instituciones y personas que pueden brindar ayuda emocional:
+            </p>
+
+            <ul>
+                <li>Psicólogos.</li>
+                <li>Orientadores escolares.</li>
+                <li>Centros de salud.</li>
+                <li>Instituciones juveniles.</li>
+                <li>Líneas de apoyo emocional.</li>
+            </ul>
+
+            <p>
+                Pedir ayuda es importante y puede mejorar el bienestar emocional.
+            </p>
+            <h2>Contacto</h2>
+
+            <p>Correo: apoyoadolescentes@gmail.com</p>
+
+            <p>Instagram: @identidadjuvenil</p>
+
+            <p>Facebook: Identidad y Juventud</p>
+
+
+
+
+
+        </section>
+        <!-- DESARROLLO LABORAL -->
+
+        <!-- ENCABEZADO -->
+
+
+
+        <!-- IMAGEN -->
+
+        <section class="card" id="laboral">
+
+            <h2>FALTA DEL DESARROLLO LABORAL EN LOS JÓVENES</h2>
+
+            <p>
+                La falta del desarrollo laboral en los jóvenes es uno de los principales problemas sociales y económicos
+                de la actualidad. Millones de jóvenes enfrentan dificultades para encontrar empleos estables, seguros y
+                bien pagados después de terminar sus estudios. La falta del desarrollo laboral en los jóvenes es uno de
+                los principales problemas sociales y económicos de la actualidad. Millones de jóvenes enfrentan
+                dificultades para encontrar empleos estables, seguros y bien pagados después de terminar sus estudios.
+
+                Muchas veces, los jóvenes cuentan con preparación académica, pero no logran conseguir oportunidades
+                laborales debido a la falta de experiencia, la escasez de vacantes y la falta de apoyo por parte de
+                empresas o instituciones.
+            </p>
+
+            <br>
+
+            <p>
+                Proyecto creado por Irlanda y equipo
+            </p>
+
+
+
+
+        </section>
+
+        <!-- INFORMACIÓN -->
+
+        <section>
+
+            <h2>¿Qué es la falta del desarrollo laboral?</h2>
+
+            <p>
+                La falta del desarrollo laboral ocurre cuando los jóvenes
+                tienen dificultades para conseguir empleos estables,
+                seguros y bien pagados.
+            </p>
+
+            <p>
+                Muchos jóvenes terminan sus estudios pero no encuentran
+                oportunidades debido a la falta de experiencia,
+                pocas vacantes o falta de apoyo.
+            </p>
+
+            <p>
+                Esta situación puede afectar su economía,
+                bienestar emocional y proyectos de vida.
+            </p>
+
+            <div class="card">
+
+                <h3>Dato importante</h3>
+
+                <p>
+                    Según la Organización Internacional del Trabajo (OIT),
+                    los jóvenes tienen más probabilidades de sufrir desempleo
+                    que los adultos.
+                </p>
+
+            </div>
+
+            <img src="https://www.meganoticias.mx/uploads/noticias/los-jovenes-los-mas-afectados-por-el-desempleo-en-mexico-156312.jpg"
+                jsaction="" class="sFlh5c FyHeAf iPVvYb"
+                style="max-width: 800px; height: 228px; margin: 0px; width: 304px;"
+                alt="Los jóvenes, los más afectados por el desempleo en México | Meganoticias" jsname="kn3ccd">
+
+            <img src="https://static01.nyt.com/images/2023/05/31/business/21newworld-print1-esp/00newworld-mediumSquareAt3X.jpg"
+                jsaction="" class="sFlh5c FyHeAf iPVvYb"
+                style="max-width: 1800px; height: 357px; margin: 0px; width: 357px;"
+                alt="Desempleo juvenil en China: Xi conmina a 'tragarse la amargura' - The New  York Times"
+                jsname="kn3ccd">
+
+            <img src="https://economipedia.com/wp-content/uploads/Desempleo-juvenil-1.jpg" jsaction=""
+                class="sFlh5c FyHeAf iPVvYb" style="max-width: 900px; height: 252px; margin: 0px; width: 357px;"
+                alt="Desempleo juvenil - Qué es, definición y concepto" jsname="kn3ccd">
+
+            <!-- CONSECUENCIAS -->
+
+            <section>
+
+                <h2>Consecuencias principales</h2>
+
+                <ul>
+                    <li>Desempleo juvenil</li>
+                    <li>Estrés y ansiedad</li>
+                    <li>Baja autoestima</li>
+                    <li>Dependencia económica</li>
+                    <li>Pobreza</li>
+                    <li>Falta de experiencia</li>
+                    <li>Empleos temporales</li>
+                    <li>Desigualdad social</li>
+                </ul>
+
+            </section>
+
+            <!-- TABLA -->
+
+            <section>
+
+                <h2>Nivel de desempleo juvenil</h2>
+
+                <table>
+
+                    <tr>
+                        <th>Edad</th>
+                        <th>Situación laboral</th>
+                        <th>Riesgo</th>
+                    </tr>
+
+                    <tr>
+                        <td>15 - 18 años</td>
+                        <td>Pocas oportunidades</td>
+                        <td>Moderado</td>
+                    </tr>
+
+                    <tr>
+                        <td>19 - 22 años</td>
+                        <td>Falta de experiencia</td>
+                        <td>Alto</td>
+                    </tr>
+
+                    <tr>
+                        <td>23 - 25 años</td>
+                        <td>Contratos temporales</td>
+                        <td>Muy alto</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+            <!-- INSTITUCIONES -->
+
+            <section>
+
+                <h2>Instituciones que ayudan en Chilpancingo</h2>
+
+                <ul>
+                    <li>Jóvenes Construyendo el Futuro</li>
+                    <li>Secretaría de la Juventud y la Niñez</li>
+                    <li>DIF Guerrero</li>
+                    <li>Secretaría del Trabajo</li>
+                    <li>Servicio Nacional de Empleo</li>
+                </ul>
+
+                <p>
+                    Estas instituciones ofrecen capacitación laboral,
+                    orientación y programas de apoyo para jóvenes.
+                </p>
+
+            </section>
+
+            <!-- NOTICIAS -->
+
+            <section>
+
+                <h2>Noticias relacionadas</h2>
+
+                <div class="noticia">
+
+                    <h3>Aumento del desempleo juvenil</h3>
+
+                    <p>
+                        Diversos estudios indican que muchos jóvenes
+                        enfrentan dificultades para encontrar trabajo
+                        después de terminar sus estudios.
+                    </p>
+
+                </div>
+
+                <div class="noticia">
+
+                    <h3>Empresas buscan experiencia laboral</h3>
+
+                    <p>
+                        Muchas empresas solicitan experiencia incluso
+                        para puestos básicos, dificultando el ingreso
+                        de jóvenes al mercado laboral.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- CIERRE -->
+
+            <section class="card">
+
+                <h2>No olvides...</h2>
+
+                <div class="quote">
+
+                    <p>
+                        Escuchar, comprender y brindar apoyo emocional puede marcar una gran diferencia en la vida
+                        de
+                        muchos
+                        jóvenes.
+                    </p>
+
+                </div>
+
+            </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Página informativa sobre problemáticas en la adolescencia
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
